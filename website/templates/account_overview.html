@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/accOverview_styles.css')}}">
+    <title>Dota2Analytics</title>
+</head>
+<body>
+    <h1><a href="/" class="home-link">Dota 2 match analytics</h1></a>
+
+    <!-- Account Overview -->
+    <h2>{{ account_data["name"]}}</h2>
+    <div class="flex-container">
+        <div class="alltime-stats">
+            <p>Matches: {{ account_data["matchCount"]}}</p>
+            <p>First match {{ account_data['firstMatchDate'] }}</p>
+        </div>
+        <div class="alltime-stats">
+            <p>Win Rate: {{ ((account_data["winCount"] / account_data["matchCount"]) * 100) | round(2) }}%</p>
+            <div class="win-loss">
+                <p class="wins">{{ account_data["winCount"]}}</p>
+                <p> - </p>
+                <p class="loss">{{ account_data["matchCount"] - account_data["winCount"] }}</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- ============================================================================= 
+    Loop over all the recent games and display a summary
+    If the user clicks on a list element, the webpage will redirect
+    to a detailed summary of the specific game
+    ============================================================================= -->
+    <div class="flex-container">
+        <div class="recent-games">
+            {% for match in match_data %}
+            <a href="{{ url_for('views.match_details', account_id=match['players'][0]['steamAccountId'], match_id=match['id']) }}">
+                    <li class="game-stats">
+                        <img src="{{ match['players'][0]['heroId'] }}" alt="Hero icon">
+                        <p>{{ match["gameMode"].strip('\"') }}</p>
+                        <p>{{ match["lobbyType"].strip('\"') }}</p>
+                        {% if match["players"][0]["isVictory"] %}
+                            <p class="wins">W</p>
+                        {% else %}
+                            <p class="loss">L</p>
+                        {% endif %}
+                        <p>{{ match["players"][0]["numKills"] }}/{{ match["players"][0]["numDeaths"] }}/{{ match["players"][0]["numAssists"] }}</p>
+                        <p>IMP: {{ match["players"][0]["imp"] }}</p>
+                        <p>{{ match["regionId"].strip('\"') }}</p>
+                        <img src="{{ match['bracket'] }}" alt="Rank icon">
+                        <p>{% set duration_seconds = match["durationSeconds"] %}
+                            {{ duration_seconds // 60 }}:{{ duration_seconds % 60 }}</p>
+                    </li>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    
+</body>
+<footer>
+    <a href="https://github.com/bjomsan" class="fotter-image" target="_blank">
+        <img src="../static/images/github.png" alt="github logo and link to profilepage">
+    </a>
+    <a href="https://www.linkedin.com/in/bj%C3%B8rn-langeland-b71173198/" class="footer-image" target="_blank">
+        <img src="../static/images/linkedin.png" alt="linkedin logo and link to profilepage">
+    </a>
+</footer>
+</html>

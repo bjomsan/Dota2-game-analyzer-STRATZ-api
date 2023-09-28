@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/match_details.css')}}">
+    <title>Dota2Analytics</title>
+</head>
+<body>
+    <h1><a href="/" class="home-link">Dota 2 match analytics</h1></a>
+
+    <div class="page-info">
+        <h2>Match ID: {{ match_id }}</h2>
+        <div class="info-bar">
+            <p>{% set duration_seconds = match_details["durationSeconds"] %}
+                {{ duration_seconds // 60 }}:{{ duration_seconds % 60 }}</p>
+            <img src="{{match_details['bracket'] }}" alt="Rank icon">
+            <p>{{ match_details["endDateTime"] }}</p>
+        </div>
+    </div>
+    
+    <!-- ================================================================== 
+    Loop over all picked and banned hero and display in different sections.
+    =================================================================== -->
+    <div class="pick-bans">
+        <h3 class="draft-header">Drafted Heroes</h3>
+        <!-- Container for both Radiant and Dire team-->
+        <div class="teams-container">
+            {% for key, val in pick_bans.items() %}
+                {% if key == match_id %}
+                    {% for team, heroes in val.items() %}
+                        <!-- RADIANT heroes -->
+                        {% if team == "radiant" %}
+                            <section class="team">
+                                <h4 class="radiant-head">Radiant</h4>
+                                    <div class="radiant-team">
+                                        {% for hero in heroes %}
+                                            <div class="hero-item">
+                                                <img src="{{ hero[1] }}" alt="Hero image" class="hero-image">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                            </section>
+                        <!-- DIRE heroes -->
+                        {% elif team == "dire" %}
+                            <section class="team">
+                                <h4 class="dire-head">Dire</h4>
+                                    <div class="dire-team">
+                                        {% for hero in heroes %}
+                                            <div class="hero-item">
+                                                <img src="{{ hero[1] }}" alt="Hero image" class="hero-image">
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                            </section>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+        
+        <!-- Separate container for banned heroes -->
+        <div class="banned-container">
+            <h3 class="banned-header">Banned Heroes</h3>
+            {% for key, val in pick_bans.items() %}
+                {% if key == match_id %}
+                    {% for team, heroes in val.items() %}
+                        {% if team == "bans" %}
+                            <section class="banned">
+                                <div class="banned-team">
+                                    {% for hero in heroes %}
+                                        <img src="{{ hero[1] }}" alt="Hero image">
+                                    {% endfor %}
+                                </div>
+                            </section>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- ============================================================================ 
+    Section for the different lane-outcomes. We use own separate classes for
+    every different scenario so we can style the text based on what team won the lane
+    ============================================================================= -->
+    <section>
+        <div class="lane-outcome-header">
+            <h3>Lane Outcomes</h3>
+        </div>
+        <div class="lane-outcome">
+            <p class="lane-name">Bottom Lane: 
+                {% if match_details["bottomLaneOutcome"] == 1 %}
+                    <p class="radiant-win">RADIANT</p>
+                {% elif match_details["bottomLaneOutcome"] == 2 %}
+                    <p class="draw">DRAW</p>
+                {% else %}
+                    <p class="dire-win">DIRE</p>
+                {% endif %}
+            </p>
+            <p class="lane-name">Mid Lane: 
+                {% if match_details["midLaneOutcome"] == 1 %}
+                    <p class="radiant-win">RADIANT</p>
+                {% elif match_details["midLaneOutcome"] == 2 %}
+                    <p class="draw">DRAW</p>
+                {% else %}
+                    <p class="dire-win">DIRE</p>
+                {% endif %}
+            </p>
+            <p class="lane-name">Top Lane: 
+                {% if match_details["topLaneOutcome"] == 1 %}
+                    <p class="radiant-win">RADIANT</p>
+                {% elif match_details["topLaneOutcome"] == 2 %}
+                    <p class="draw">DRAW</p>
+                {% else %}
+                    <p class="dire-win">DIRE</p>
+                {% endif %}
+            </p>
+        </div>
+    </section>
+
+    <!-- =====================================================================================
+    Section for the game graphs/grids. One is for the Networth and the other is for Experience
+    ====================================================================================== -->
+    <section class="game-graphs">
+        <h3 class="graph-header">Graphs - Networth & Experience </h3>
+        <div class="graph-images">
+            <img src="{{ url_for('static', filename='images/grid_images/' + str_matchId + '_NW.png') }}">
+            <img src="{{ url_for('static', filename='images/grid_images/' + str_matchId + '_EXP.png') }}">
+        </div>
+    </section>
+
+</body>
+<footer>
+    <a href="https://github.com/bjomsan" class="fotter-image" target="_blank">
+        <img src="{{ url_for('static', filename='images/github.png') }}" alt="github logo and link to profilepage">
+    </a>
+    <a href="https://www.linkedin.com/in/bj%C3%B8rn-langeland-b71173198/" class="footer-image" target="_blank">
+        <img src="{{ url_for('static', filename='images/linkedin.png') }}" alt="linkedin logo and link to profilepage">
+    </a>
+</footer>
+</html>

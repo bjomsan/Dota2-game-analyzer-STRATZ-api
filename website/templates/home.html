@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home_styles.css')}}">
+    <title>Dota2Analytics</title>
+</head>
+<body>
+    <h1><a href="/" class="home-link">Dota 2 match analytics</h1></a>
+
+    <div class="page-info">
+        <p id="first">See your personal stats and analysis from recent Dota2 matches.</p>
+        <p id="second">Enter your account ID below to see your recent performance.</p>
+    </div>
+
+    <div class="get-started">
+        <h2>GET STARTED</h2>
+        <p>Insert Dota2 account ID <br>
+        NOTE - Steam ID is not the same as Dota2 ID</p>
+        
+        <form method="POST" action="/">
+            <input type="text" id="dota2_account_id" name="dota2_account_id">
+            <input type="submit" value="START">
+        </form>
+        <!-- Display the error message if it exists -->
+        {% if error_message %}
+        <div class="error-message">{{ error_message }}</div>
+        {% endif %}
+    </div>
+
+</body>
+<footer>
+    <a href="https://github.com/bjomsan" class="fotter-image" target="_blank">
+        <img src="../static/images/github.png" alt="github logo and link to profilepage">
+    </a>
+    <a href="https://www.linkedin.com/in/bj%C3%B8rn-langeland-b71173198/" class="footer-image" target="_blank">
+        <img src="../static/images/linkedin.png" alt="linkedin logo and link to profilepage">
+    </a>
+</footer>
+</html>

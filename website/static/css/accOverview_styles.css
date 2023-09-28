@@ -1,0 +1,87 @@
+/*
+WHITE       #EEEEEE
+LIGHTBLUE   #64CCC5
+MIDBLUE     #176B87
+DARKBLUE    #053B50
+*/
+
+h2 {
+    margin-top: 2.5em;
+    margin-bottom: 0;
+    padding-left: 2em;
+    font-size: 50px;
+    color: white;
+}
+
+.flex-container {
+    font-size: 17px;
+    color: #EEEEEE;
+    display: flex;
+    justify-content: center;
+}
+
+.alltime-stats {
+    width: 50%;
+    background-color: #2E414C;
+    margin: 2em;
+    display: flex;
+    justify-content: center;
+    border: 1px solid #ED982B;
+}
+
+.alltime-stats p {
+    margin-right: 5%;
+}
+
+.win-loss {
+    display: flex;
+    justify-content: center;
+}
+
+.wins {
+    color: rgb(0, 255, 0);
+    padding-right: 0;
+}
+
+.loss {
+    color: rgb(255, 0, 0);
+    padding-left: 0;
+}
+
+.recent-games {
+    margin: 0;
+    margin-bottom: 6em;
+    background-color: #2E414C;
+    width: 80%;
+    color: #EEEEEE;
+    padding: 0.25em;
+    border: 1px solid #EF972D;
+}
+
+.recent-games a {
+    color: #EEEEEE;
+    text-decoration: none;
+}
+
+ol {
+    list-style-type: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+li p {
+    margin: 0;
+    display: inline;
+}
+
+li img {
+    width: 30px;
+    height: 30px;
+}
+
+.game-stats {
+    list-style-type: none;
+    border: 2px solid #176B87;
+    padding: 0.5em;
+    margin: 1em;
+}

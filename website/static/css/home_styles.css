@@ -1,0 +1,43 @@
+/*
+WHITE       #EEEEEE
+LIGHTBLUE   #64CCC5
+MIDBLUE     #176B87
+DARKBLUE    #053B50
+*/
+
+.page-info {
+    color: white;
+    margin-top: 7em;
+    margin-bottom: 2em;
+    text-align: center;
+}
+
+#first {
+    font-size: 50px;
+}
+
+#second {
+    font-size: 30px;
+}
+
+.get-started h2 {
+    font-size: 50px;
+}
+
+.get-started p {
+    font-size: 20px;
+}
+
+.get-started {
+    background-color: #64CCC5;
+    padding: 2em;
+    width: 50%;
+    margin-top: 4em;
+    margin-left: 4em;
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
+    font-style: italic;
+}

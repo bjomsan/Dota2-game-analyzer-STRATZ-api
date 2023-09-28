@@ -1,0 +1,171 @@
+.page-info {
+    color: #EEEEEE;
+    margin-top: 7em;
+    margin-bottom: 2em;
+    padding: 1em;
+}
+
+.page-info img {
+    width: 30px;
+    height: 30px;
+}
+
+.page-info h2 {
+    margin-bottom: 0;
+}
+
+.info-bar {
+    display: flex;
+    align-items: center;
+}
+
+.info-bar p {
+    margin-right: 10px;
+}
+
+.draft-header {
+    background-color: #053B50;
+    text-align: center;
+    color: #EEEEEE;
+    font-size: 30px;
+    border-top: 1px solid #EF972D;
+    border-bottom: 1px solid #EF972D;
+    padding: 0.5em;
+    margin-bottom: 2em;
+}
+
+.banned-header {
+    text-align: center;
+    color: #EEEEEE;
+}
+
+.banned-container {
+    font-size: 20px;
+    border: 1px solid #EEEEEE;
+    padding-bottom: 1.5em;
+    width: 80%;
+    margin: auto;
+    margin-top: 4em;
+}
+
+.radiant-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+.dire-team {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    }
+
+.hero-image {
+    width: 99%;
+    height: auto;
+    margin: 10px;
+}
+
+
+.hero-item {
+    width: 15%;
+    text-align: center;
+    margin: 5px;
+    color: #EEEEEE;
+}
+
+h4 {
+    margin-bottom: 1em;
+    margin-top: 1em;
+    text-align: center;
+}
+
+.radiant-head {
+    color: rgb(0, 255, 0);
+    font-size: 40px;
+}
+
+.dire-head {
+    color: rgb(255, 0, 0);
+    font-size: 40px;
+}
+
+
+.banned-team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.banned-team img {
+    width: 10%;
+}
+
+.lane-outcome-header {
+    background-color: #053B50;
+    text-align: center;
+    color: #EEEEEE;
+    font-size: 30px;
+    border-top: 1px solid #EF972D;
+    border-bottom: 1px solid #EF972D;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    margin-top: 3em;
+}
+
+.lane-outcome-header h3 {
+    margin: 0;
+}
+
+.lane-outcome {
+    font-size: 20px;
+    width: 90%;
+    color: #EEEEEE;
+    padding: 0.25em;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 5em;
+}
+
+.lane-name {
+    margin-left: 1.5em;
+}
+
+.radiant-win {
+    color: rgb(0, 255, 0);
+    margin: 1em;
+    margin-left: 0.5em;
+}
+
+.dire-win {
+    color: rgb(255, 0, 0);
+    margin: 1em;
+    margin-left: 0.5em;
+}
+
+.draw {
+    color: rgb(134, 134, 134);
+    margin: 1em;
+    margin-left: 0.5em;
+}
+
+.graph-header {
+    text-align: center;
+    font-size: 35px;
+    color: #EF972D;
+}
+
+.graph-images {
+    text-align: center;
+}
+
+.graph-images img {
+    width: 80%;
+}
+
+.game-graphs {
+    margin-bottom: 6em;
+}
