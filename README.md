@@ -1,1 +1,1 @@
-# Dota2-game-analyzer-with-STRATZ-api
+# Dota2-game-analyzer-STRATZ-api
