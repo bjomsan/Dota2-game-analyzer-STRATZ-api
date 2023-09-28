@@ -1,7 +1,8 @@
 # Dota2-game-analyzer-STRATZ-api
 
 In this project I have used the STRATZ API (https://stratz.com/api) to gather information and some basic analysis on Dota 2 games of a specific account.
-This is created as a web-application that runs on Flask with python/sqlite/html&css. In the repository, I have included a short video, demonstrating how the application works as well as some images. 
+This is created as a web-application that runs on Flask with python/sqlite/html&css. In the repository, I have included a short video, demonstrating how the application works as well as some images. <br> <br>
+!NB! to run the program you need a token from stratz.com/api in the call_database_data.py file
 
 ## Files/folders Overview:
 
