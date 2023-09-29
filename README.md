@@ -38,3 +38,8 @@ For now, the database does not have any ways to auto-update itself when there is
 
 ### Possibilities for further development and improvement:
 Most of the data in the database is not beein used currently. For further development it would be possible to both make the analysis more comprenensive, include more than 10 most recent games and some general analysis of the different heroes (e.g find hero with best stat-gains/movement-speed/base damage etc). At the moment the database is NOT normalized, which should also be concidered in future development. Making an even better UX/UI with better coding for different devices and screen sizes is also on the list. 
+
+
+# Image gallery
+![accountOverview_demo](https://github.com/bjomsan/Dota2-game-analyzer-STRATZ-api/assets/124776049/626da49c-dd06-48e1-882f-e8de32c29655) <br> <br>
+![matchinfo_demo](https://github.com/bjomsan/Dota2-game-analyzer-STRATZ-api/assets/124776049/23a0245f-c982-4b6c-8aff-d79c94d65f2d)
