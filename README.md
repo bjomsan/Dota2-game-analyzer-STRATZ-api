@@ -1,7 +1,7 @@
 # Dota2-game-analyzer-STRATZ-api
 
 In this project I have used the STRATZ API (https://stratz.com/api) to gather information and some basic analysis on Dota 2 games of a specific account.
-This is created as a web-application that runs on Flask with python/sqlite/html&css. In the repository, I have included a short video, demonstrating how the application works as well as some images. <br> <br>
+This is created as a web-application that runs on Flask with python/sqlite/html&css. Scroll all the way down to se some images of the application. <br> <br>
 For now, the database does not have any ways to auto-update itself when there is new dota2 update/patch. For the database to update, run the file create_database.py. This will overrite the existing and making the complete database updated with the newest data from the api. <br> <br>
 !NB! to run the program you need a token from stratz.com/api in the call_database_data.py file
 
