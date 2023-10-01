@@ -1,6 +1,6 @@
 import json
 import requests
-from filt_hero import hero
+from datagathering.filt_hero import hero
 
 """
     In this file we create multiple responses from the STRATZ api
@@ -8,7 +8,7 @@ from filt_hero import hero
 """
 
 # find your token at stratz.com/api
-token = ""
+token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJTdWJqZWN0IjoiYTQ5NDZmODctMGFlMy00YzE2LTlmMjItOTgzZjcxODkzNjJkIiwiU3RlYW1JZCI6IjE1Njc1OTI0OCIsIm5iZiI6MTY5MzgyOTk5NSwiZXhwIjoxNzI1MzY1OTk1LCJpYXQiOjE2OTM4Mjk5OTUsImlzcyI6Imh0dHBzOi8vYXBpLnN0cmF0ei5jb20ifQ.asIXzbJMGza3y4Ri90_6HhtAA3CDgocDXfJGxq4hogQ"
 headers = {"Authorization": f"Bearer {token}"}
 
 # make a response with the input url. inlcudes error-handling

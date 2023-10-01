@@ -1,4 +1,4 @@
-from website.datagathering.call_database_data import make_response
+from datagathering.call_database_data import make_response
 import sqlite3
 
 database = "datagathering/dota.db"

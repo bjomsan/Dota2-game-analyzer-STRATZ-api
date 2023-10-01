@@ -1,6 +1,6 @@
 import datetime
 from datetime import datetime
-from website.datagathering.call_database_data import make_response
+from datagathering.call_database_data import make_response
 
 """
     This file calls the Player/{accountId} api from Stratz with data on the specified
